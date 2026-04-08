@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Serene</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --sage: #6B8E7F;
+      --sage-light: #8AAF9F;
+      --sage-pale: #EEF4F1;
+      --sage-dark: #4A6B5C;
+      --amber: #C9A661;
+      --amber-light: #DBBE88;
+      --amber-pale: #FBF6ED;
+      --text-primary: #2D3B35;
+      --text-secondary: #5C6E66;
+      --text-muted: #8A9E96;
+      --border: #D8E8E2;
+      --white: #FFFFFF;
+      --shadow: 0 2px 16px rgba(107, 142, 127, 0.12);
+      --shadow-lg: 0 8px 40px rgba(107, 142, 127, 0.16);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--sage-pale);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 60%, var(--sage-light) 100%);
+      color: var(--white);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(201, 166, 97, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-icon svg {
+      width: 36px;
+      height: 36px;
+      fill: none;
+      stroke: var(--white);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 span {
+      color: var(--amber-light);
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    header .last-updated {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Intro banner ── */
+    .intro-banner {
+      background: linear-gradient(135deg, var(--amber-pale), #FFF8EE);
+      border: 1.5px solid var(--amber-light);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .intro-banner .banner-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--amber);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro-banner .banner-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .intro-banner p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .intro-banner p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to right, #FAFCFB, var(--white));
+    }
+
+    .section-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--sage);
+      color: var(--white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .section-header h2 {
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: var(--text-primary);
+      letter-spacing: -0.1px;
+    }
+
+    .section-body {
+      padding: 24px 28px;
+    }
+
+    .section-body p {
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+      margin-bottom: 14px;
+    }
+
+    .section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── "None collected" pill ── */
+    .none-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #EEF7F3;
+      border: 1.5px solid #B2D8C8;
+      color: var(--sage-dark);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .none-badge svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: var(--sage);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Feature list ── */
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    .feature-list li .dot {
+      flex-shrink: 0;
+      margin-top: 7px;
+      width: 8px;
+      height: 8px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    /* ── Storage card ── */
+    .storage-card {
+      background: var(--sage-pale);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 6px;
+    }
+
+    .storage-card svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--sage);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      margin-top: 2px;
+    }
+
+    .storage-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin: 0 !important;
+    }
+
+    /* ── Contact block ── */
+    .contact-block {
+      background: linear-gradient(135deg, var(--sage-pale), #F0F8F4);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+
+    .contact-block .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-block .contact-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-block .contact-row:first-child {
+      padding-top: 0;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      width: 70px;
+      flex-shrink: 0;
+    }
+
+    .contact-value {
+      font-size: 0.97rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .contact-value a {
+      color: var(--sage-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .contact-value a:hover {
+      color: var(--sage);
+      border-color: var(--sage-light);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px 48px;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    footer .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--sage);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    footer .footer-logo svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: var(--sage);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 540px) {
+      .intro-banner {
+        flex-direction: column;
+        gap: 14px;
+        padding: 22px 20px;
+      }
+
+      .section-header {
+        padding: 18px 20px;
+      }
+
+      .section-body {
+        padding: 20px 20px;
+      }
+
+      .contact-block .contact-row {
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-start;
+      }
+
+      .contact-label {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header>
+    <div class="header-icon">
+      <!-- lotus / leaf icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M12 22c0 0-8-4.5-8-11a8 8 0 0 1 16 0c0 6.5-8 11-8 11z"/>
+        <path d="M12 22V11"/>
+        <path d="M9 14c-2-1.5-3-3.5-3-5"/>
+        <path d="M15 14c2-1.5 3-3.5 3-5"/>
+      </svg>
+    </div>
+    <h1>Serene <span>Privacy Policy</span></h1>
+    <p class="subtitle">Android Meditation Timer App</p>
+    <div class="last-updated">Last updated: April 8, 2026</div>
+  </header>
+
+  <!-- ═══════════ MAIN CONTENT ═══════════ -->
+  <main class="container">
+
+    <!-- Intro Banner -->
+    <div class="intro-banner">
+      <div class="banner-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <p>
+        <strong>Your privacy is fully protected.</strong> Serene is a completely offline app.
+        It does not collect, transmit, or share any personal data — ever. This policy explains
+        what that means in practice.
+      </p>
+    </div>
+
+    <!-- 1. Introduction -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">01</div>
+        <h2>Introduction</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Serene ("the App") is a meditation timer application for Android devices developed
+          by Nitish. This Privacy Policy describes how we handle
+          information in connection with your use of the App.
+        </p>
+        <p>
+          By using Serene, you agree to the practices described in this policy. Because the App
+          operates entirely on your device, your experience is private by design — no accounts,
+          no sign-ins, no cloud connectivity required.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">02</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <div class="section-body">
+        <div class="none-badge">
+          <!-- checkmark icon -->
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          We collect absolutely no information
+        </div>
+        <p>
+          Serene does not collect, access, or process any personal information. This includes,
+          but is not limited to:
+        </p>
+        <ul class="feature-list">
+          <li><span class="dot"></span>No names, email addresses, or contact details</li>
+          <li><span class="dot"></span>No location data</li>
+          <li><span class="dot"></span>No device identifiers or advertising IDs</li>
+          <li><span class="dot"></span>No usage statistics or analytics</li>
+          <li><span class="dot"></span>No crash reports transmitted externally</li>
+          <li><span class="dot"></span>No cookies or tracking technologies</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. How We Use Information -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">03</div>
+        <h2>How We Use Information</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Because we collect no information, we have nothing to use, process, or analyze.
+          All app data — including your meditation sessions, streaks, and preferences — exists
+          solely on your device and is never transmitted anywhere.
+        </p>
+        <p>
+          The App's features function as follows:
+        </p>
+        <ul class="feature-list">
+          <li><span class="dot"></span><strong>Meditation sessions</strong> — timers run locally; no session data leaves your device</li>
+          <li><span class="dot"></span><strong>Streaks &amp; history</strong> — stored only in your device's local app storage</li>
+          <li><span class="dot"></span><strong>Daily reminders</strong> — delivered as local Android notifications; no server is contacted</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Data Storage -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">04</div>
+        <h2>Data Storage &amp; Security</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          All data generated by the App (session history, streak counts, reminder settings)
+          is stored exclusively in your device's local storage using Android's standard app
+          data mechanisms.
+        </p>
+        <div class="storage-card">
+          <!-- device / phone icon -->
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <p>
+            This data is sandboxed to the App on your device and is automatically removed
+            when you uninstall Serene. We have no access to it whatsoever.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Third-Party Services -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">05</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Serene does not integrate any third-party SDKs, analytics platforms, advertising
+          networks, or crash-reporting services. There are no external services, APIs, or
+          libraries that receive any information from or about you.
+        </p>
+        <p>
+          The App does not contain advertisements of any kind.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6. Children's Privacy -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">06</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Serene is suitable for users of all ages. Because the App collects no personal
+          information from anyone, it inherently complies with children's privacy requirements,
+          including the Children's Online Privacy Protection Act (COPPA) and similar
+          international regulations.
+        </p>
+        <p>
+          We do not knowingly or unknowingly collect data from children or adults.
+        </p>
+      </div>
+    </div>
+
+    <!-- 7. Changes to This Policy -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">07</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          We may update this Privacy Policy from time to time. When we do, the revised policy
+          will be posted at this location with an updated "Last updated" date at the top of
+          the page.
+        </p>
+        <p>
+          We encourage you to review this page periodically. Continued use of Serene after
+          any changes constitutes acceptance of the updated policy.
+        </p>
+      </div>
+    </div>
+
+    <!-- 8. Contact -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">08</div>
+        <h2>Contact Us</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          If you have any questions or concerns about this Privacy Policy or the App,
+          please reach out:
+        </p>
+        <div class="contact-block">
+          <div class="contact-row">
+            <span class="contact-label">Developer</span>
+            <span class="contact-value">Nitish</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">
+              <a href="mailto:[YOUR EMAIL]">nitishkdev007@gmail.com</a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">App</span>
+            <span class="contact-value">Serene — Meditation Timer (Android)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="footer-logo">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 22c0 0-8-4.5-8-11a8 8 0 0 1 16 0c0 6.5-8 11-8 11z"/>
+        <path d="M12 22V11"/>
+      </svg>
+      Serene
+    </div>
+    <p>© 2026 Nitish K · All rights reserved</p>
+    <p style="margin-top:6px;">This app operates entirely offline and collects no user data.</p>
+  </footer>
+
+</body>
+</html>
